@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:50:08 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/04 13:35:51 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/04 15:06:13 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ int main(void)
 
 	//printf("RESULT PRINTF <%d>\n", printf("asdf%c %s\n", 'c', "ANA"));
 	//printf("RESULT FT_PRINTF <%d>\n", ft_printf("asdf%c %s\n", 'c', "ANA"));
-	ft_printf("result <%u>\n", -100);
-	printf("result original <%u>\n", -1);
+	ft_printf("result <%u>\n", -1000000);
+	printf("result original <%u>\n", -1000000);
 
 	return (0);
 }

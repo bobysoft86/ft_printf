@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 12:29:56 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/04 13:04:46 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/04 15:05:48 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,26 @@ size_t	ft_strlen(const char *c)
 }
 int	ft_putstr(char *s)
 {
-	int i;
+	int len;
 
-	i = 0;
-	while(s[i])
+	len = 0;
+	while(s[len])
 	{
-		if (write(1, &s[i], 1) == -1)
+		if (write(1, &s[len], 1) == -1)
 			return (-1);
-		i++;
+		len++;
 	}
-	return (i);
-	// return (write (1, s, ft_strlen(s)));
+	return (len);
+	//return (write (1, s, ft_strlen(s)));
 	
 }
 int	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
-		write (fd, "-2147483648", 11);
+	{
+		if (write (fd, "-2147483648", 11) == -1)
+			return (-1);
+	}
 	else
 	{
 		if (n < 0)
@@ -74,6 +77,7 @@ int	ft_putnbr_fd(int n, int fd)
 			ft_putnbr_fd ((n % 10), fd);
 		}
 	}
+	
 	return (n);
 }
 
@@ -112,6 +116,22 @@ str++;
 		str++;
 	}
 	return (tot * neg);
+}
+
+int	ft_putnbr_fdunsigned(unsigned int n, int fd)
+{
+	
+		
+		if (n >= 0 && n <= 9)
+			ft_putchar_fd (n + '0', fd);
+		if (n > 9)
+		{
+			ft_putnbr_fd ((n / 10), fd);
+			ft_putnbr_fd ((n % 10), fd);
+		}
+	
+	//printf("%u\n", n);
+	return (n);
 }
 
 
