@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 12:29:56 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/02 12:43:27 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/04 13:04:46 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,17 @@ size_t	ft_strlen(const char *c)
 }
 int	ft_putstr(char *s)
 {
+	int i;
 
-	return (write (1, s, ft_strlen(s)));
+	i = 0;
+	while(s[i])
+	{
+		if (write(1, &s[i], 1) == -1)
+			return (-1);
+		i++;
+	}
+	return (i);
+	// return (write (1, s, ft_strlen(s)));
 	
 }
 int	ft_putnbr_fd(int n, int fd)

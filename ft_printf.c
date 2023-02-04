@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:50:08 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/02 16:08:22 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/04 13:35:51 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ int ft_printelection(char entrada, va_list args)
 	if(entrada == 'c')
 	i = i + ft_putchar((char) va_arg(args, int));
 	if (entrada == 's')
-		i = i + ft_putstr((char *) va_arg(args, void *));
-	if (entrada == 'd')
-		i = i + ft_printbase((char) va_arg(args, int));
+		i = i + ft_putstr (va_arg(args, char *));
+	if (entrada == 'd' || entrada == 'i' )
+		i = i + ft_printbase(va_arg(args, int));
+	if (entrada == 'u')
+		i = i + ft_printunsigned(va_arg(args, unsigned int));
 		//printf("VA_ARG <%d>\n", va_arg(args, int));
 
 
@@ -72,8 +74,8 @@ int main(void)
 
 	//printf("RESULT PRINTF <%d>\n", printf("asdf%c %s\n", 'c', "ANA"));
 	//printf("RESULT FT_PRINTF <%d>\n", ft_printf("asdf%c %s\n", 'c', "ANA"));
-	ft_printf("result <%d>\n", 214748364);
-	printf("result original <%d>\n", -2147483648);
+	ft_printf("result <%u>\n", -100);
+	printf("result original <%u>\n", -1);
 
 	return (0);
 }
