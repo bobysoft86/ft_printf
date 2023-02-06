@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:50:08 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/06 17:15:36 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:50:52 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,16 @@ int ft_printf(char const *entrada, ...)
 }
 
 
-
+/*
 int main(void)
 {
 
 	
 
-	printf("RESULT FT_PRINTF <%d>\n", ft_printf("%d\n", 1000));
-	printf("RESULT PRINTF <%d>\n", printf("%d\n", 1000));
+	printf("RESULT FT_PRINTF <%d>\n", ft_printf("%d\n", -214748364));
+	printf("RESULT PRINTF <%d>\n", printf("%d\n", -214748364));
 	//ft_printf("result <%X>\n", -1000);
 	//printf("result original <%X>\n", -1000);
 
 	return (0);
-}
+}*/

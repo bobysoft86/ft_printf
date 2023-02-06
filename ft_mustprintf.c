@@ -6,7 +6,7 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:45:19 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/06 17:05:42 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:50:40 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,25 @@ int ft_printbase(int nbr)
 	nb = nbr;
 	len = 0;
 
-		//printf("printbase prueba:%d\n", nbr);
 	if ( nbr < 0)
-		nb = -nb;
-		len++;
+		{
+			nb = -nb;
+			len++;
+		}
 
 	while (nb > 9)
 	{
 		nb = nb / 10;
 		len++;
 	}
+		len++;
+		//printf("printbaselen prueba:<%d>\n", len);
 		ft_putnbr_fd(nbr, 1);
 	if (nbr == -214748364)
+		{
 		write(1, "-214748364", 11);
-		return(0);
+		return(10);
+		}
 	return(len);
 }
 int	ft_printunsigned(unsigned int nbr)
