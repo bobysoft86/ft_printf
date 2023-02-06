@@ -6,13 +6,13 @@
 #    By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/01 12:18:16 by roberodr          #+#    #+#              #
-#    Updated: 2023/02/02 15:17:06 by roberodr         ###   ########.fr        #
+#    Updated: 2023/02/06 15:05:02 by roberodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_mustlibft.c ft_mustprintf.c 
+SRCS = ft_printf.c ft_mustlibft.c ft_mustprintf.c ft_printhexamin.c ft_printhexcap.c ft_printpointer.c 
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,11 +6,11 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 12:29:56 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/04 15:05:48 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:02:14 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+# include "ft_printf.h"
 
 int	ft_isdigit(int c)
 {
@@ -130,6 +130,47 @@ int	ft_putnbr_fdunsigned(unsigned int n, int fd)
 			ft_putnbr_fd ((n % 10), fd);
 		}
 	
+	//printf("%u\n", n);
+	return (n);
+}
+int	ft_putnbr_fdunsignedhex(unsigned int n, int fd)
+{
+	char *base;
+
+	base = "0123456789abcdef";	
+		
+	//	if (n >= 0 && n <= 9)
+		if  (n >= 16)
+		{
+			ft_putnbr_fdunsignedhex ((n / 16), fd);
+					
+			//ft_putnbr_fd ((n % 16), fd);
+		}
+			 
+				// write (fd, &base[n/16],1);	
+				write (fd, &base[n%16],1);
+			
+	//printf("%u\n", n);
+	return (n);
+}
+
+int	ft_putnbr_fdunsignedhexcap(unsigned int n, int fd)
+{
+	char *base;
+
+	base = "0123456789ABCDEF";	
+		
+	//	if (n >= 0 && n <= 9)
+		if  (n >= 16)
+		{
+			ft_putnbr_fdunsignedhexcap ((n / 16), fd);
+					
+			//ft_putnbr_fd ((n % 16), fd);
+		}
+			 
+				// write (fd, &base[n/16],1);	
+				write (fd, &base[n%16],1);
+			
 	//printf("%u\n", n);
 	return (n);
 }

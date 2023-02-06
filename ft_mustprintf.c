@@ -6,12 +6,12 @@
 /*   By: roberodr <roberodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:45:19 by roberodr          #+#    #+#             */
-/*   Updated: 2023/02/04 15:04:09 by roberodr         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:05:42 by roberodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdio.h>
+#include "ft_printf.h"
+
 
 
 int ft_printbase(int nbr)
@@ -38,40 +38,23 @@ int ft_printbase(int nbr)
 		return(0);
 	return(len);
 }
-int	ft_printunsigned(int nbr)
+int	ft_printunsigned(unsigned int nbr)
 {
-	/*char	*str;
-	int		cont;
-
-	str = ft_unsigned_itoa(nbr);
-	cont = ft_putstr(str);
-	free(str);
-	return (cont);
-	printf("NBR IS %d\n", nbr);*/
-
-	
 	 unsigned int nb;
 	int len;
 
+	len = 0;
 	nb = nbr;
-	if ( nbr < 0)
-	{
-		nb = 4294967296 + nbr  ;
-		len++;
-		
-	}
-		//printf("printbase prueba:%u\n", nb);
 
-	/*if (nb > 9)
-	{
-		nb = nb / 10;
+	if (nb == 0)
 		len++;
-	}*/
+	while(nbr)
+	{
+		nbr = nbr / 10  ;
+		len++;
+	}
 	ft_putnbr_fdunsigned(nb, 1);
-	
-	
 	return(len);
-	
 }
 
 
